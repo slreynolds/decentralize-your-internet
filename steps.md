@@ -127,6 +127,11 @@ cd git
 ```bash
 git clone git@github.com:codingkrabbe/decentralize-your-internet.git
 ```
+- publish the public key of your admin machine via http
+```bash
+cd decentralize-your-internet/scripts/step_4
+python3 publish_public_key.py
+```
 
 
 
