@@ -1,0 +1,7 @@
+# Remove IDE files
+.idea/
+
+# do not commit private keys (or public keys)
+id_rsa
+id_rsa.pub
+*.key
