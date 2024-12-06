@@ -102,6 +102,9 @@ topics:
 - Click Install
 - Do not view the release notes
 
+topics:
+- git bash copy paste is weird
+
 ## Check that python is installed on the admin machine
 - run git bash
 - type 
