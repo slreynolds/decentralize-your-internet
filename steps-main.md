@@ -76,6 +76,7 @@ topics
 - SSH configuration: enable Install OpenSSH server
 - Reboot after install
 - you successfully installed ubuntu!
+- demo user: cloudy:cloudy
 
 topics:
 - SSH --> later
@@ -101,42 +102,89 @@ topics:
 - Configuring experimental options: enable file system caching
 - Click Install
 - Do not view the release notes
+- move to your home folder and download this repository
+```bash
+cd
+mkdir git
+git clone git@github.com:codingkrabbe/decentralize-your-internet.git
+```
 
 topics:
 - git bash copy paste is weird
 
-## Check that python is installed on the admin machine
-- run git bash
-- type 
-```python
-python3 --version
-```
-- if you get a version number, you are good to go
-- if not, install python for windows: https://www.python.org/downloads/windows/
+# Step 4 - install docker
 
+- update your package manager and install docker
+```bash
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+```
+- install docker and put your user into the docker group (might need shell restart)
+```bash
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo usermod -aG docker $(whoami)
+```
+- test your installation
+```bash
+sudo docker run hello-world
+```
+
+topics: 
+- apt key
+
+# Step 5 - install jenkins
+
+- install jenkins (add keyring, add repository, install jenkins)
+```bash
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+    https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt update
+sudo apt install -y fontconfig openjdk-17-jre
+sudo apt install -y jenkins
+```
+- find out your current ip
+```bash
+ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+```
+- on your admin machine, open your browser and go to http://<your-ip>:8080
+- this will open the jenkins web interface
+- copy the password from the console
+```bash
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+- type the password into the web interface
+- you can now install plugins in jenkins
+  - the default installation aims for developer setups
+  - we don't need that, but it doesn't hurt
+  - if you select yourself, the following are not needed:
+    - ant, gradle, PAM authentication, LDAP authentication, matrix authorization
+- click Install
+- wait for the installation to finish
+- add your admin user
+  - username: cloudy
+  - password: cloudy
+  - full name: Cloudy McCloudface
+  - email: none@cloudy.com (jenkins can send mails if things go south)
+- Instance Configuration: Save and Finish
+- Start using Jenkins
 
 topics:
-- git
-
-# Step 4 - Make a Server out of your machine
-
-- go to your admin machine --> bash
-- create a folder "git"
-```bash
-mkdir git
-cd git
-```
-- clone the workshop repo repository
-```bash
-git clone git@github.com:codingkrabbe/decentralize-your-internet.git
-```
-- publish the public key of your admin machine via http
-```bash
-cd decentralize-your-internet/scripts/step_4
-python3 publish_public_key.py
-```
-
-
-
-Topics
-- ssh keys
+- jenkins
+- 
+- cicd
+- nice plugins
+- 
