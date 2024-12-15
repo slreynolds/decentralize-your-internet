@@ -175,8 +175,8 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 - click Install
 - wait for the installation to finish
 - add your admin user
-  - username: cloudy
-  - password: cloudy
+  - username: clenkins
+  - password: clenkins
   - full name: Cloudy McCloudface
   - email: none@cloudy.com (jenkins can send mails if things go south)
 - Instance Configuration: Save and Finish
@@ -184,7 +184,26 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 topics:
 - jenkins
-- 
 - cicd
 - nice plugins
-- 
+
+# Step 6 - register machine as agent (so we can automatically run stuff)
+
+- go to Jenkins --> Manage Jenkins --> Nodes
+- click on "Built-In Node"
+- add the label "server"
+- you can now run jenkins jobs on this machine via labels
+- test your setup with a jenkins pipeline
+  - go to jenkins root
+  - "New Item" --> Folder "prod"
+  - "New Item" --> Folder "dev"
+  - click on dev --> Create new Job --> Pipeline --> "my_first_pipeline"
+  - go to the pipeline section
+  - add the Hello World example from "try sample pipeline"
+  - can also be found here
+
+topics
+- jenkins config as code
+- pipelines as code
+- jenkins only pulls, no push
+- security architecture
