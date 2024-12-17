@@ -60,26 +60,6 @@ services:
     networks:
       - priv
 
-  nginx_priv:
-    container_name: '${PROJECT}_${CONTAINER_NAME_NGINX}'
-    image: nginx:latest
-    depends_on:
-      - app
-    ports:
-      - "${NGINX_PORT_HTTP}:80"
-      - "${NGINX_PORT_HTTPS}:443"
-    volumes:
-      - ${NGINX_CONFIG}:/etc/nginx/conf.d/default.conf
-      - ${NGINX_KEY_FOLDER}:/etc/keys
-      - ${NGINX_HTML_FOLDER}:/usr/share/nginx/html
-      - ${NGINX_LOGS_FOLDER}:/var/log/nginx
-    networks:
-      - pub
-    environment:
-      - "PYTHONUNBUFFERED=1"
-    restart: always
-
-
 networks:
   pub:
     name: "${PROJECT}_${NETWORK_PUBLIC}"

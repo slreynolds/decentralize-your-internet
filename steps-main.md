@@ -214,8 +214,13 @@ topics
 ```bash
 git clone git@github.com:codingkrabbe/decentralize-your-internet.git
 ```
-- go to the nextcloud folder, make a copy of the env file and edit it
+- do some prep work, go to the nextcloud folder, make a copy of the env file and edit it
 ```bash
+cd /home/cloudy
+mkdir nextcloud_data
+mkdir nextcloud_logs
+mkdir nextcloud_ssl
+mkdir nextcloud_html
 cd decentralize-your-internet/infra/nextcloud
 cp .example.env .env
 nano .env
