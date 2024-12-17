@@ -1,0 +1,89 @@
+volumes:
+  nc_apps:
+    name: "{$PROJECT}_${NEXTCLOUD_VOLUME_APPS}"
+    labels:
+      - "${DOCKER_LABEL}"
+  nc_config:
+    name: "{$PROJECT}_${NEXTCLOUD_VOLUME_CONFIG}"
+    labels:
+      - "${DOCKER_LABEL}"
+  nc_nextcloud:
+    name: "{$PROJECT}_${NEXTCLOUD_VOLUME_CORE}"
+    labels:
+      - "${DOCKER_LABEL}"
+  nc_themes:
+    name: "{$PROJECT}_${NEXTCLOUD_VOLUME_THEMES}"
+    labels:
+      - "${DOCKER_LABEL}"
+  postgres_db_nc:
+    name: "{$PROJECT}_${POSTGRES_VOLUME}"
+    labels:
+      - "${POSTGRES_LABEL}"
+      - "${DOCKER_LABEL}"
+
+services:
+  app:
+    container_name: '{$PROJECT}_${CONTAINER_NAME_NEXTCLOUD}'
+    image: nextcloud:latest
+    depends_on:
+      - db
+    ports:
+      - "${NEXTCLOUD_PORT}:80"
+    volumes:
+      - nc_nextcloud:/var/www/html
+      - nc_apps:/var/www/html/custom_apps
+      - nc_config:/var/www/html/config
+      - ${NEXTCLOUD_VOLUME_DATA}:/var/www/html/data
+      - nc_themes:/var/www/html/themes
+      - ${NEXTCLOUD_VOLUME_LOGS}:/var/log
+    networks:
+      - priv
+      - pub
+    environment:
+      - "PYTHONUNBUFFERED=1"
+      - PHP_MEMORY_LIMIT=4096M
+      - PHP_UPLOAD_LIMIT=102400M # Attention, seems Nextcloud Desktop Client needs logout + login to respect this
+    restart: always
+
+  db:
+    container_name: '{$PROJECT}_${CONTAINER_NAME_POSTGRES}'
+    image: postgres:13.4
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    restart: always
+    volumes:
+      - postgres_db_nc:/var/mylibs/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PW}
+      - PGDATA=/var/mylibs/postgresql/data/pgdata
+      - "PYTHONUNBUFFERED=1"
+    networks:
+      - priv
+
+  nginx_priv:
+    container_name: '{$PROJECT}_${CONTAINER_NAME_NGINX}'
+    image: nginx:latest
+    depends_on:
+      - app
+    ports:
+      - "${NGINX_PORT_HTTP}:80"
+      - "${NGINX_PORT_HTTPS}:443"
+    volumes:
+      - ${NGINX_CONFIG}:/etc/nginx/conf.d/default.conf
+      - ${NGINX_KEY_FOLDER}:/etc/keys
+      - ${NGINX_HTML_FOLDER}:/usr/share/nginx/html
+      - ${NGINX_LOGS_FOLDER}:/var/log/nginx
+    networks:
+      - pub
+    environment:
+      - "PYTHONUNBUFFERED=1"
+    restart: always
+
+
+networks:
+  pub:
+    name: "{$PROJECT}_${NETWORK_PUBLIC}"
+    driver: bridge
+  priv:
+    name: "{$PROJECT}_${NETWORK_PRIVATE}"
+    driver: bridge

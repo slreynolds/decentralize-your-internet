@@ -200,10 +200,12 @@ topics:
   - click on dev --> Create new Job --> Pipeline --> "my_first_pipeline"
   - go to the pipeline section
   - add the Hello World example from "try sample pipeline"
-  - can also be found here
+  - can also be found here: step_6/pipeline_hello_world.groovy
 
 topics
 - jenkins config as code
 - pipelines as code
 - jenkins only pulls, no push
 - security architecture
+
+# Step 7 - run nextcloud
