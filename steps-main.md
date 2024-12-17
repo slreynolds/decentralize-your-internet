@@ -222,7 +222,7 @@ mkdir nextcloud_logs
 mkdir nextcloud_ssl
 mkdir nextcloud_html
 cd decentralize-your-internet/infra/nextcloud
-cp .example.env .env
+cp .env.example .env
 nano .env
 ```
 - replace the password with a password of your choice
