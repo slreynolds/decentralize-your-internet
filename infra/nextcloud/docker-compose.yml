@@ -1,29 +1,29 @@
 volumes:
   nc_apps:
-    name: "{$PROJECT}_${NEXTCLOUD_VOLUME_APPS}"
+    name: "${PROJECT}_${NEXTCLOUD_VOLUME_APPS}"
     labels:
       - "${DOCKER_LABEL}"
   nc_config:
-    name: "{$PROJECT}_${NEXTCLOUD_VOLUME_CONFIG}"
+    name: "${PROJECT}_${NEXTCLOUD_VOLUME_CONFIG}"
     labels:
       - "${DOCKER_LABEL}"
   nc_nextcloud:
-    name: "{$PROJECT}_${NEXTCLOUD_VOLUME_CORE}"
+    name: "${PROJECT}_${NEXTCLOUD_VOLUME_CORE}"
     labels:
       - "${DOCKER_LABEL}"
   nc_themes:
-    name: "{$PROJECT}_${NEXTCLOUD_VOLUME_THEMES}"
+    name: "${PROJECT}_${NEXTCLOUD_VOLUME_THEMES}"
     labels:
       - "${DOCKER_LABEL}"
   postgres_db_nc:
-    name: "{$PROJECT}_${POSTGRES_VOLUME}"
+    name: "${PROJECT}_${POSTGRES_VOLUME}"
     labels:
       - "${POSTGRES_LABEL}"
       - "${DOCKER_LABEL}"
 
 services:
   app:
-    container_name: '{$PROJECT}_${CONTAINER_NAME_NEXTCLOUD}'
+    container_name: '${PROJECT}_${CONTAINER_NAME_NEXTCLOUD}'
     image: nextcloud:latest
     depends_on:
       - db
