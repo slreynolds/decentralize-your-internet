@@ -46,7 +46,7 @@ services:
     restart: always
 
   db:
-    container_name: '{$PROJECT}_${CONTAINER_NAME_POSTGRES}'
+    container_name: '${PROJECT}_${CONTAINER_NAME_POSTGRES}'
     image: postgres:13.4
     ports:
       - "${POSTGRES_PORT}:5432"
@@ -61,7 +61,7 @@ services:
       - priv
 
   nginx_priv:
-    container_name: '{$PROJECT}_${CONTAINER_NAME_NGINX}'
+    container_name: '${PROJECT}_${CONTAINER_NAME_NGINX}'
     image: nginx:latest
     depends_on:
       - app
@@ -82,8 +82,8 @@ services:
 
 networks:
   pub:
-    name: "{$PROJECT}_${NETWORK_PUBLIC}"
+    name: "${PROJECT}_${NETWORK_PUBLIC}"
     driver: bridge
   priv:
-    name: "{$PROJECT}_${NETWORK_PRIVATE}"
+    name: "${PROJECT}_${NETWORK_PRIVATE}"
     driver: bridge

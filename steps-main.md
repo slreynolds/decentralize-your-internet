@@ -209,3 +209,24 @@ topics
 - security architecture
 
 # Step 7 - run nextcloud
+
+- copy the git repository to your target machine
+```bash
+git clone git@github.com:codingkrabbe/decentralize-your-internet.git
+```
+- go to the nextcloud folder, make a copy of the env file and edit it
+```bash
+cd decentralize-your-internet/infra/nextcloud
+cp .example.env .env
+nano .env
+```
+- replace the password with a password of your choice
+- replace the project name with a name of your choice
+- start the nextcloud containers
+
+
+topics
+- docker .env files
+- passwords
+- docker-compose
+- current architecture
