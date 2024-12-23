@@ -23,5 +23,5 @@
 ```bash
 cd
 mkdir git
-git clone git@github.com:codingkrabbe/decentralize-your-internet.git
+git clone git@github.com:hackerbande-nbg/decentralize-your-internet.git
 ```

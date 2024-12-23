@@ -253,7 +253,7 @@ topics
 
 - copy the git repository to your target machine
 ```bash
-git clone git@github.com:codingkrabbe/decentralize-your-internet.git
+git clone git@github.com:hackerbande-nbg/decentralize-your-internet.git
 ```
 - do some prep work, go to the nextcloud folder, make a copy of the env file and edit it
 ```bash
