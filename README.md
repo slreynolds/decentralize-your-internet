@@ -20,8 +20,8 @@ flowchart TD
 
 # Step 0 - Hardware and Preparations
 
-- get the target machine: e.g. HP Pavillon 15-bc230ng
-- admin  machine from where you work normally
+- get the target machine: e.g. Dell Latitude E6230
+- admin machine from where you work normally
 - charger for said notebook
 - a USB Stick (8GB or more)
 - a mouse for setup (optional)
