@@ -1,20 +1,16 @@
-# Step 4 - Setup Nextcloud 
+# Step 5 - Setup Nextcloud 
 
 ## Run Docker containers
 - copy the git repository to your target machine
 ```bash
+/home/cloudy
 git clone git@github.com:hackerbande-nbg/decentralize-your-internet.git
 ```
 - do some prep work, go to the nextcloud folder, make a copy of the env file and edit it
 ```bash
 cd /home/cloudy
-mkdir nextcloud_data
-mkdir nextcloud_logs
-mkdir nextcloud_ssl
-mkdir nextcloud_html
-cd decentralize-your-internet/infra/nextcloud
-cp .env.example .env
-nano .env
+cd scripts/step_5
+prep_nextcloud_env.sh
 ```
 - replace the password (POSTGRES_PW) with a password of your choice
   - ATTENTION it seems important to make it not too complicated, this cost me a whi
