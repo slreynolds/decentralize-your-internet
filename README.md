@@ -2,13 +2,14 @@
 ```mermaid
 flowchart TD
     0["0 MAIN Hardware Setup"] --> 1
-    1["1 MAIN ubuntu"] --> 2
-    2["2 MAIN Docker"] --> 3
-    3["3 MAIN jenkins"] --> 4
-    4["4 MAIN Nextcloud"]
-    1 -.-> 1_1["1_1 (optional) Configure SSH"]
-    3 -.-> 3_1["3_1 (optional) jenkins nodes"]
-    3_1 -.-> 3_2["3_2 (optional) git pipelines"]
+    1["1 MAIN Domain"] --> 2
+    2["2 MAIN Ubuntu"] --> 2
+    3["3 MAIN Docker"] --> 3
+    4["4 MAIN Jenkins"] --> 4
+    5["5 MAIN Nextcloud"]
+    2 -.-> 2_1["1_1 (optional) Configure SSH"]
+    4 -.-> 4_1["3_1 (optional) jenkins nodes"]
+    4_1 -.-> 4_2["3_2 (optional) git pipelines"]
     
     style 0 fill:#1E9088,stroke:#000,stroke-width:3px
     style 1 fill:#1E9088,stroke:#000,stroke-width:3px
@@ -26,13 +27,14 @@ flowchart TD
 - a USB Stick (8GB or more)
 - a mouse for setup (optional)
 
-# Step 1 - Install ubuntu
-## Step 1_1 - Configure SSH
+# Step 1 - Register a cool domain 
 
-# Step 2 - Install docker
+# Step 2 - Install ubuntu
+## Step 2_1 - Configure SSH
 
-# Step 3 - Install jenkins
+# Step 3 - Install docker
 
-# Step 3_1 - Register Jenkins Nodes
+# Step 4 - Install jenkins
+## Step 4_1 - Register Jenkins Nodes
 
-# Step 4 - Setup Nextcloud 
+# Step 5 - Setup Nextcloud 
