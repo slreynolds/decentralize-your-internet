@@ -3,9 +3,9 @@
 flowchart TD
     0["0 MAIN Hardware Setup"] --> 1
     1["1 MAIN Domain"] --> 2
-    2["2 MAIN Ubuntu"] --> 2
-    3["3 MAIN Docker"] --> 3
-    4["4 MAIN Jenkins"] --> 4
+    2["2 MAIN Ubuntu"] --> 3
+    3["3 MAIN Docker"] --> 4
+    4["4 MAIN Jenkins"] --> 5
     5["5 MAIN Nextcloud"]
     2 -.-> 2_1["1_1 (optional) Configure SSH"]
     4 -.-> 4_1["3_1 (optional) jenkins nodes"]
