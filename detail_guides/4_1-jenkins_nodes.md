@@ -29,6 +29,7 @@
     ```
 
     </details>
+
     - can also be found here: [scripts/step_4/pipeline_hello_world.groovy](scripts/step_4/pipeline_hello_world.groovy)
     - Click on "Build Now":  
     ![Build Now Button](../images/Jenkins_Run.png)
