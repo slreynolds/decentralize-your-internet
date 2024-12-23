@@ -6,7 +6,8 @@ flowchart TD
     2["2 MAIN Ubuntu"] --> 3
     3["3 MAIN Docker"] --> 4
     4["4 MAIN Jenkins"] --> 5
-    5["5 MAIN Nextcloud"]
+    5["5 MAIN Nextcloud"] --> 6
+    6["6 MAIN NGINX Proxy Manager"]
     2 -.-> 2_1["1_1 (optional) Configure SSH"]
     4 -.-> 4_1["3_1 (optional) jenkins nodes"]
     4_1 -.-> 4_2["3_2 (optional) git pipelines"]
@@ -39,3 +40,5 @@ flowchart TD
 ## Step 4_1 - Register Jenkins Nodes
 
 # Step 5 - Setup Nextcloud 
+
+# Step 6 - Configure NGINX Proxy Manager
