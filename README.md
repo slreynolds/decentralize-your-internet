@@ -6,9 +6,15 @@ flowchart TD
     2["MAIN Docker"] --> 3
     3["MAIN jenkins"] --> 4
     4["MAIN Nextcloud"]
-    1 -.-> 1_1["(opt) SSH"]
-    3 -.-> 3_1["(opt) jenkins nodes"]
-    3_1 -.-> 3_2["(opt) git pipelines"]
+    1 -.-> 1_1["(optional) SSH"]
+    3 -.-> 3_1["(optional) jenkins nodes"]
+    3_1 -.-> 3_2["(optional) git pipelines"]
+    
+    style 0 fill:#1E9088,stroke:#000,stroke-width:3px
+    style 1 fill:#1E9088,stroke:#000,stroke-width:3px
+    style 2 fill:#1E9088,stroke:#000,stroke-width:3px
+    style 3 fill:#1E9088,stroke:#000,stroke-width:3px
+    style 4 fill:#1E9088,stroke:#000,stroke-width:3px
 ```
 
 
@@ -122,7 +128,7 @@ topics:
 
 # Step 3 - install docker
 
-- update your package manager and add docker repo [see script](scripts/step_4/add_docker_apt_repo.sh)
+- update your package manager and add docker repo [see script](scripts/step_3/add_docker_apt_repo.sh)
 ```bash
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -138,7 +144,7 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
 ```
-- install docker and put your user into the docker group (might need shell restart) [see script](scripts/step_4/install_docker.sh)
+- install docker and put your user into the docker group (might need shell restart) [see script](scripts/step_3/install_docker.sh)
 ```bash
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo usermod -aG docker $(whoami)
