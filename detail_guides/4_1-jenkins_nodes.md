@@ -1,4 +1,4 @@
-# Step 3_1 - register machine as agent (so we can automatically run stuff)
+# Step 4_1 - register machine as agent (so we can automatically run stuff)
 
 - go to Jenkins --> Manage Jenkins --> Nodes
 - click on "Built-In Node" (german: "Master")

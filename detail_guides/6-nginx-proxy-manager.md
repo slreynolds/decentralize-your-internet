@@ -1,4 +1,7 @@
 # Configure NGINX Proxy Manager
+## Setup Port Forwarding on your router
+On your Router, you need to allow SSL encrypted requests from the internet to pass into your network and be processed by your server (namely NGINX Proxy Manager, which we will setup in the next step).
+
 ## Initial Login
 On your admin machine, open a browser and browse to http://<target machine IP>:81 
 When logging in the first time, you need to use the following predefined credentials:

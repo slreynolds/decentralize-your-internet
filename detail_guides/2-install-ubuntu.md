@@ -1,4 +1,4 @@
-# Step 1 Install Ubuntu
+# Step 2 - Install Ubuntu
 
 ## Create Ubuntu Setup Stick
 

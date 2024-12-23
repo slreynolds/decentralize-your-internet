@@ -1,6 +1,14 @@
-# Step 2.1 - Set up your admin machine
+# Step 0 - Hardware and Preparations
 
-## Install git
+- get the target machine: e.g. Dell Latitude E6230
+- charger for said notebook
+- admin machine from where you work normally
+- a USB Stick (8GB or more)
+- a mouse for setup (optional)
+
+## Set up your admin machine
+
+### Install git
 
 - download git for windows: https://git-scm.com/download/win
 - run the installer

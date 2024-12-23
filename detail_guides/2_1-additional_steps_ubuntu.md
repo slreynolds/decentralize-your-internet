@@ -1,4 +1,4 @@
-# Step 4 - Make a Server out of your machine
+# Step 2_1 - Make a Server out of your machine
 
 - go to your admin machine --> bash
 - create a folder "git"

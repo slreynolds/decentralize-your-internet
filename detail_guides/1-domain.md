@@ -1,4 +1,4 @@
-# Setup external Domain
+# Step 1 - Setup external Domain
 
 ## Register a Domain with a Registrar
 E.g. inwx.de [inwx.de](https://www.inwx.de/en/domain/check#search=38c3.fun#region=DEFAULT#rc=rc1)
