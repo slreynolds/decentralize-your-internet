@@ -31,13 +31,6 @@ flowchart TD
 ## DL ubuntu
 download 22.04 LTS latest version (https://ubuntu.com/download/server)
 
-topics
-- why ubuntu
-- what is a boot stick
-- disable secure boot
-- what is LTS
-- general ubuntu install manual
-
 ## Install rufus
 
 - download rufus https://rufus.ie/en/ (version 4.6)
@@ -62,9 +55,6 @@ topics
 - Warning: All data on device 'D:' will be destroyed: Push OK
 - wait patiently (7 minutes for me)
 - Push Close
-
-topics
-- what is a boot stick
 
 # Step 2 - Install ubuntu
 
@@ -118,14 +108,6 @@ sudo apt update && sudo apt upgrade -y
 sudo reboot now
 ```
 
-topics:
-- SSH --> later
-
-
-
-topics:
-- git bash copy paste is weird
-
 # Step 3 - install docker
 
 - update your package manager and add docker repo [see script](scripts/step_3/add_docker_apt_repo.sh)
@@ -154,9 +136,6 @@ sudo usermod -aG docker $(whoami)
 sudo docker run hello-world
 ```
 Should pull the hello-world image from Docker Hub and show a lengthy "Hello from Docker! ..." message.
-
-topics: 
-- apt key
 
 # Step 4 - install jenkins
 
@@ -198,12 +177,6 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 - Instance Configuration: Save and Finish
 - Start using Jenkins
 
-
-topics:
-- jenkins
-- cicd
-- nice plugins
-
 # Step 4_1 - register machine as agent (so we can automatically run stuff)
 
 - go to Jenkins --> Manage Jenkins --> Nodes
@@ -240,14 +213,6 @@ topics:
     ![Build Now Button](images/Jenkins_Run.png)
     - Click on the Build Number, on the lower left, then on "Console Output":   
     ![Hello World Console Output](images/Jenkins_Output.png)
-
-
-
-topics
-- jenkins config as code
-- pipelines as code
-- jenkins only pulls, no push
-- security architecture
 
 # Step 5 - run nextcloud
 
@@ -311,10 +276,3 @@ nano .env
   - Click on "Install"
     - Button should switch to "Installing" - patience!
   - On the next page click "Install recommended Apps" or make a choice 
-
-
-topics
-- docker .env files
-- passwords
-- docker-compose
-- current architecture
