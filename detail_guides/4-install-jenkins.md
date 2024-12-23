@@ -1,4 +1,4 @@
-# Step 4 - install jenkins
+# Step 4 - Install jenkins
 
 - install jenkins (add keyring, add repository, install jenkins)
 ```bash

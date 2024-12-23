@@ -45,7 +45,7 @@ prep_nextcloud_env.sh
 
 ## Configure nextcloud
 - On your admin machine, open a browser and browse to http://<target machine IP>:8092
-  - Nextcloud Setup Screen should show up ![Nextcloud Setup Screen](images/nextcloud_setup.png)
+  - Nextcloud Setup Screen should show up ![Nextcloud Setup Screen](../images/nextcloud_setup.png)
 - Choose an admin login and password of your choice
 - Expand "Storage and Database":
   - Storage Directory: Keep Default
@@ -69,8 +69,8 @@ Here is one way to do it.
     ```docker run --rm -it -v 38c3.fun_nextcloud_config:/mnt/config ubuntu bash -c "apt-get update && apt-get install -y nano && nano /mnt/config/config.php"```
 - in nano, change the item 0 of array "trusted domains" to your real domain:  
     - Before:  
-    ![trusted domains before change](images/config_php_domain_before.png)
+    ![trusted domains before change](../images/config_php_domain_before.png)
     - After:   
-    ![trusted domains before change](images/config_php_domain_after.png)
+    ![trusted domains before change](../images/config_php_domain_after.png)
 
 Please note: If NGINX Proxy Manager is not yet fully configured, your external domain will not yet point to the nextcloud. So this setting will effectively lock you out of your nextcloud for now. Which is ok, but if you want to log in during this time, consider just adding both adresses, internal IP and external domain to the array of trusted domains.

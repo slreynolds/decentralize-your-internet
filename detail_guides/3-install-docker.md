@@ -1,6 +1,6 @@
 # Step 3 - Install docker
 
-- update your package manager and add docker repo [see script](scripts/step_3/add_docker_apt_repo.sh)
+- update your package manager and add docker repo [see script](../scripts/step_3/add_docker_apt_repo.sh)
 ```bash
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -16,7 +16,7 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
 ```
-- install docker and put your user into the docker group (might need shell restart) [see script](scripts/step_3/install_docker.sh)
+- install docker and put your user into the docker group (might need shell restart) [see script](../scripts/step_3/install_docker.sh)
 ```bash
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo usermod -aG docker $(whoami)
