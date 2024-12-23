@@ -237,9 +237,9 @@ topics:
     </details>
     - can also be found here: [step_6/pipeline_hello_world.groovy](scripts/step_6/pipeline_hello_world.groovy)
     - Click on "Build Now":  
-    ![Build Now Button](Jenkins_Run.png)
+    ![Build Now Button](images/Jenkins_Run.png)
     - Click on the Build Number, on the lower left, then on "Console Output":   
-    ![Hello World Console Output](Jenkins_Output.png)
+    ![Hello World Console Output](images/Jenkins_Output.png)
 
 
 
@@ -267,7 +267,8 @@ cp .env.example .env
 nano .env
 ```
 - replace the password (POSTGRES_PW) with a password of your choice
-  - ATTENTION it seems important to make it not too complicated, this cost me a while to figure out. I was lucky with a 25 character long password, containing lower, upper case and numbers. No special characters.
+  - ATTENTION it seems important to make it not too complicated, this cost me a whi
+  le to figure out. I was lucky with a 25 character long password, containing lower, upper case and numbers. No special characters.
 - replace the project name (PROJECT) with a name of your choice
 - start the nextcloud containers:
   ```bash

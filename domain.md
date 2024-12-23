@@ -13,7 +13,7 @@ For INWX, log in, go to [My Account](https://www.inwx.de/en/customer), Name Serv
 Click on 'Add Acount'.
 
 Choose new credentials (use none of those created before):  
-![INWX DynDNS creation](inwx_dyndns.png)
+![INWX DynDNS creation](images/inwx_dyndns.png)
 
 ### Configure DynDNS in your Router
 #### FritzBox
@@ -28,7 +28,7 @@ https://<user>:<passwd>@dyndns.inwx.com/nic/update?myip=<ipaddr>
 - Domain Name, User Name, Password:  
 Use the data you created in step [Register with DynDNS Provider](#register-with-dyndns-provider)
 
-![FritzBox DynDNS](fritzbox-dyndns-configuration.png)
+![FritzBox DynDNS](images/fritzbox-dyndns-configuration.png)
 
 see also [official documentation](https://en.avm.de/service/knowledge-base/dok/FRITZ-Box-7581-int/30_Setting-up-dynamic-DNS-in-the-FRITZ-Box/)
 
