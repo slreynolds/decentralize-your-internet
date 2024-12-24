@@ -12,8 +12,8 @@ mkdir nextcloud_keys
 echo "copying infra files"
 cp decentralize-your-internet/infra/nextcloud/compose.yml nextcloud_infra/
 cp decentralize-your-internet/infra/nextcloud/.env.example nextcloud_infra/.env
-chmod +r compose.yml
-chmod +r .env
+chmod +r $HOME_DIR/nextcloud_infra/compose.yml
+chmod +r $HOME_DIR/nextcloud_infra/.env
 
 cd nextcloud_infra
 echo "!!! check the .env and adjust db secret in all cases and project names if necessary !!!"
