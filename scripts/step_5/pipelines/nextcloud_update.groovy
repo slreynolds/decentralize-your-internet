@@ -1,44 +1,27 @@
 pipeline {
     agent any
-    environment {
-        DOCKER_COMPOSE_PATH = "/home/cloudy/infra/nextcloud"
-    }
+
     stages {
-        stage('Checkout Directory') {
+
+        stage('Docker Compose Operations') {
             steps {
-                script {
-                    dir(env.DOCKER_COMPOSE_PATH) {
-                        echo "Navigated to ${env.DOCKER_COMPOSE_PATH}"
-                    }
-                }
-            }
-        }
-        stage('Pull Latest Containers') {
-            steps {
-                script {
-                    dir(env.DOCKER_COMPOSE_PATH) {
-                        sh 'docker-compose pull'
-                    }
-                }
-            }
-        }
-        stage('Recreate and Restart Containers') {
-            steps {
-                script {
-                    dir(env.DOCKER_COMPOSE_PATH) {
-                        sh 'docker-compose down'
-                        sh 'docker-compose up -d'
-                    }
-                }
+                    // Perform docker-compose commands
+                    sh '''
+                        cd /home/cloudy/nextcloud_infra
+                        docker compose --project-name cloudy pull
+                        docker compose --project-name cloudy down
+                        docker compose --project-name cloudy up -d
+                    '''
             }
         }
     }
+
     post {
-        success {
-            echo "Pipeline completed successfully."
+        always {
+            echo 'Pipeline execution complete.'
         }
         failure {
-            echo "Pipeline failed. Please check the logs."
+            echo 'Pipeline failed.'
         }
     }
 }
