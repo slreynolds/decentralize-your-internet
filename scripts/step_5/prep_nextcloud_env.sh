@@ -16,4 +16,6 @@ chmod +r $HOME_DIR/nextcloud_infra/compose.yml
 chmod +r $HOME_DIR/nextcloud_infra/.env
 
 cd nextcloud_infra
-echo "!!! check the .env and adjust db secret in all cases and project names if necessary !!!"
+echo ""
+echo -e "\e[94m!!! check the .env and adjust db secret in all cases and project names if necessary !!!\e[0m"
+echo ""
