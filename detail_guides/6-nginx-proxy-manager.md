@@ -22,7 +22,7 @@ After logging in, system will prompt you to setup a real admin account and disab
 - Click on "Test Server Reachability"
     - Should display "Your server is reachable and creating certificates should be possible."
     - Accept Let's Encrypt TOS and click "Save"  
-        ![Create Certificate](images/NPM_cert.png)
+        ![Create Certificate](../images/NPM_cert.png)
 
 ## Setup Proxy Host
 - Navigate to "Hosts" -> "Proxy Hosts"
@@ -39,7 +39,7 @@ After logging in, system will prompt you to setup a real admin account and disab
         - Forward Port
             - 8092
         - Toggle "Block Common Exploits", keep rest as default
-        ![Host Details](images/NPM_Host_Details.png)
+        ![Host Details](../images/NPM_Host_Details.png)
     - Custom locations
         - Keep default
     - SSL
