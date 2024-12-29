@@ -2,6 +2,9 @@
 ## Setup Port Forwarding on your router
 On your Router, you need to allow SSL encrypted requests from the internet to pass into your network and be processed by your server (namely NGINX Proxy Manager, which we will setup in the next step). 
 
+**PLEASE PAY ATTENTION: in this step, you WILL OPEN YOUR SETUP TO THE INTERNET! Be sure that you want this and know that the world can access your setup.
+Make sure your System is up to date and you have backups of your data.**
+
 ### FritzBox
 In a Fritzbox router, this can be configured under Internet -> Permit Access -> Port Sharing.
 Add a new Device for Sharing, select your server and set internal and external port as 443.
