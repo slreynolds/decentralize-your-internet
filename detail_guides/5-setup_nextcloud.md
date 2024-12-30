@@ -13,8 +13,7 @@ cd scripts/step_5
 prep_nextcloud_env.sh
 ```
 - replace the password (POSTGRES_PW) with a password of your choice
-  - ATTENTION it seems important to make it not too complicated, this cost me a whi
-  le to figure out. I was lucky with a 25 character long password, containing lower, upper case and numbers. No special characters.
+  - ATTENTION it seems important to make it not too complicated, this cost me a while to figure out. I was lucky with a 25 character long password, containing lower, upper case and numbers. No special characters.
 - replace the project name (PROJECT) with a name of your choice
 - start the nextcloud containers:
   ```bash
